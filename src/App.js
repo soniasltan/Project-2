@@ -1,14 +1,39 @@
 import './App.css';
 import React from "react"
-import SearchFood from './components/SearchFood';
+import {Route, Link, NavLink} from "react-router-dom"
+import CssBaseline from "@mui/material/CssBaseline"
+import {Stack} from "@mui/material"
+import Keyword from "./components/Keyword"
+import Button from "@mui/material/Button"
+import ClosestMRT from './components/ClosestMRT';
 
 function App() {
+
+
   return (
+    <>
+    <CssBaseline />
     <div className="App">
-      <h1>Nom nom for us</h1>
-      <p>Fetching food from...</p>
-      <SearchFood />
-    </div>
+      <Route exact path="/">
+      <h1>Welcome to SG Food Finder</h1>
+      <h3>Search up restaurants and other food establishments by one of the following: </h3>
+      <Stack direction="row" spacing={2} justifyContent="center">
+      <Button variant="contained">
+        <Link to="/keyword">Search by Keyword</Link>
+      </Button>
+      <Button variant="contained">
+        <Link to="/closestMRT">Search by nearest MRT</Link>
+      </Button>
+      </Stack>
+      </Route>
+      <Route path="/keyword">
+        <Keyword />
+      </Route>
+      <Route path="/closestMRT">
+        <ClosestMRT />
+      </Route>
+      </div>
+    </>
   );
 }
 
