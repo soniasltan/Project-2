@@ -11,7 +11,7 @@ const ClosestMRT = () => {
           console.log(data);
         };
         fetchStations();
-      }, []);
+      }, [stationUrl]);
 
     return(
         <p>Closest MRT selection</p>
