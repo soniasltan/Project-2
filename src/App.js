@@ -1,5 +1,6 @@
 import './App.css';
 import React from "react"
+import Navbar from "./components/Navbar"
 import {Route, Link, NavLink} from "react-router-dom"
 import CssBaseline from "@mui/material/CssBaseline"
 import {Stack} from "@mui/material"
@@ -14,6 +15,7 @@ function App() {
     <>
     <CssBaseline />
     <div className="App">
+      <Navbar />
       <Route exact path="/">
       <h1>Welcome to SG Food Finder</h1>
       <h3>Search up restaurants and other food establishments by one of the following: </h3>
