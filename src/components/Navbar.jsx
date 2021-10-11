@@ -20,8 +20,8 @@ export default function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-              <NavLink to="/">
-            <HomeRoundedIcon />
+            <NavLink to="/">
+              <HomeRoundedIcon />
             </NavLink>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
