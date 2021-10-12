@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 // import ReactDOM from "react-dom"
 import Button from "@mui/material/Button"
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import { TextField, Stack } from "@mui/material";
+import KeywordRestaurantCards from "./KeywordRestaurantCards";
 
 const KeywordSearch = (props) => {
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("idle");
-  const [restos, setRestos] = useState("");
+  const [restos, setRestos] = useState([]);
 
 
   const foodSearchUrl =
@@ -58,29 +54,9 @@ const KeywordSearch = (props) => {
             ? "Search found the following eateries"
             : ""}
         </p>
-        <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-        <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image= {restos?.[3]?.images?.[0]?.url}
-        alt={restos?.[3]?.name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-        {restos?.[3]?.name}
-        </Typography>
-        {/* <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography> */}
-      </CardContent>
-      <CardActions>
-        {/* <Button size="small">Share</Button> */}
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    </Stack>
+        <Stack direction="row" spacing={2} alignItems="center" justifyContent="center" sx={{flexWrap: "wrap"}}>
+        <KeywordRestaurantCards restos={restos}/>
+        </Stack>
       </div>
     </>
   );

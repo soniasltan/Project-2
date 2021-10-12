@@ -7,6 +7,7 @@ import { Stack } from "@mui/material";
 import Keyword from "./components/Keyword";
 import Button from "@mui/material/Button";
 import ClosestMRT from "./components/ClosestMRT";
+import KeywordRestaurantCards from "./components/KeywordRestaurantCards";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path="/keyword">
           <Keyword />
+        </Route>
+        <Route path="/keyword/:search">
+          <KeywordRestaurantCards />
         </Route>
         <Route path="/closestMRT">
           <ClosestMRT />
