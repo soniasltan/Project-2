@@ -54,33 +54,33 @@ const ClosestMRT = (props) => {
     setInput(restoData)
     console.log("filtered", restoData)
     console.log("new input", input)
-    for (let i=0; i<5; i++) {
-    if (input.length < 3) {
-      console.log("iterating")
-      console.log("first token", token)
-      let newRes = await fetch(
-        "https://tih-api.stb.gov.sg/content/v1/food-beverages/search?keyword=food&nextToken=" +
-          token +
-          "%3D&language=en&apikey=" +
-          process.env.REACT_APP_TIH_API_KEY
-      );
-      let newData = await newRes.json();
-      console.log("next page", newData)
-      token=newData.nextToken
-      let newRestoData = newData?.data.filter(
-        (search) =>
-          search.nearestMrtStation === station ||
-          search.nearestMrtStation === station + " Station" ||
-          search.nearestMrtStation === station + " MRT Station"
-      );
-      console.log("new token", token)
-      console.log("newRestoData", newRestoData)
-      console.log("second call input", input)
-      return (
-        setInput(newRestoData, ...restoData)
-      ) 
-    } 
-    }
+    // for (let i=0; i<5; i++) {
+    // if (input.length < 3) {
+    //   console.log("iterating")
+    //   console.log("first token", token)
+    //   let newRes = await fetch(
+    //     "https://tih-api.stb.gov.sg/content/v1/food-beverages/search?keyword=food&nextToken=" +
+    //       token +
+    //       "%3D&language=en&apikey=" +
+    //       process.env.REACT_APP_TIH_API_KEY
+    //   );
+    //   let newData = await newRes.json();
+    //   console.log("next page", newData)
+    //   token=newData.nextToken
+    //   let newRestoData = newData?.data.filter(
+    //     (search) =>
+    //       search.nearestMrtStation === station ||
+    //       search.nearestMrtStation === station + " Station" ||
+    //       search.nearestMrtStation === station + " MRT Station"
+    //   );
+    //   console.log("new token", token)
+    //   console.log("newRestoData", newRestoData)
+    //   console.log("second call input", input)
+    //   return (
+    //     setInput(newRestoData, ...restoData)
+    //   ) 
+    // } 
+    // }
   };
 
   const lineSelectStyle = {
