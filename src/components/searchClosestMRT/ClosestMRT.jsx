@@ -13,12 +13,11 @@ const ClosestMRT = (props) => {
   const [station, setStation] = useState("");
   const [input, setInput] = useState([]);
 
-  const [url, setUrl] = useState(
+  const url =
     "https://tih-api.stb.gov.sg/content/v1/food-beverages/search?keyword=" +
-      "food" +
+      station +
       "&language=en&apikey=" +
-      process.env.REACT_APP_TIH_API_KEY
-  );
+      process.env.REACT_APP_TIH_API_KEY;
 
   const selectedLineStations = mrtStations.data.filter(
     (selected) => selected.lineName === line
@@ -43,7 +42,7 @@ const ClosestMRT = (props) => {
     console.log("handling submit")
     const res = await fetch(url);
     let data = await res.json();
-    let token = data?.nextToken
+    // let token = data?.nextToken
     console.log("unfiltered", data);
     const restoData = data?.data.filter(
       (search) =>
@@ -53,7 +52,7 @@ const ClosestMRT = (props) => {
     );
     setInput(restoData)
     console.log("filtered", restoData)
-    console.log("new input", input)
+    // console.log("new input", input)
     // for (let i=0; i<5; i++) {
     // if (input.length < 3) {
     //   console.log("iterating")
@@ -101,7 +100,7 @@ const ClosestMRT = (props) => {
 
   return (
     <>
-      <p>Search by closest MRT selection</p>
+      <h3>Find convenient dining spots close to your desired location by selecting the nearest MRT station below</h3>
 
       <Box sx={{ minWidth: 120 }}>
         <FormControl sx={{ width: 300 }}>

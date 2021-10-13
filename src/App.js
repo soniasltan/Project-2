@@ -34,12 +34,11 @@ function App() {
           <Route exact path="/keyword">
             <Keyword />
           </Route>
-          <Route exact path="/keyword/:restoName">
-          <KeywordRestaurantDetails/>
-        </Route>
+        
           <Route path="/closestMRT">
             <ClosestMRT />
           </Route>
+
         </Switch>
       </div>
     </>
