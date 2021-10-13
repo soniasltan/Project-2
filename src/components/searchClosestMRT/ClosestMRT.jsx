@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import mrtStations from "../data/mrtStations";
+import mrtStations from "../../data/mrtStations";
 // import SearchMRT from "./SearchMRT"
 
 const ClosestMRT = (props) => {
