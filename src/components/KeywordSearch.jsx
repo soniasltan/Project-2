@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // import ReactDOM from "react-dom"
 import Button from "@mui/material/Button"
+import Container from "@mui/material/Container"
+import Grid from "@mui/material/Grid"
 import { TextField, Stack } from "@mui/material";
 import KeywordRestaurantCards from "./KeywordRestaurantCards";
 
@@ -54,9 +56,11 @@ const KeywordSearch = (props) => {
             ? "Search found the following eateries"
             : ""}
         </p>
-        <Stack direction="row" spacing={2} alignItems="center" justifyContent="center" sx={{flexWrap: "wrap"}}>
+        <Container maxWidth="lg">
+        <Grid container spacing={4}>
         <KeywordRestaurantCards restos={restos}/>
-        </Stack>
+        </Grid>
+        </Container>
       </div>
     </>
   );

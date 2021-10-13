@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid"
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -11,7 +12,8 @@ const KeywordRestaurantCards = (props) => {
 
   let restoCards = props.restos.map((data) => {
     return (
-      <Card key={data.uuid} sx={{ width: 345, height: 300, margin: "10px 10px 10px 10px" }}>
+      <Grid item key={data.uuid} xs={12} sm={6} md={4}>
+      <Card sx={{ height: "100%" }}>
         <CardMedia
           component="img"
           height="140"
@@ -26,7 +28,7 @@ const KeywordRestaurantCards = (props) => {
           }
           alt={data.name}
         />
-        <CardContent>
+        <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="div">
             {data.name}
           </Typography>
@@ -40,6 +42,7 @@ const KeywordRestaurantCards = (props) => {
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
+      </Grid>
     );
   });
   return (
