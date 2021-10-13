@@ -79,7 +79,7 @@ const KeywordRestaurantCards = (props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         BackdropProps={{
-          sx: { background: "rgba(56, 54, 54, 0.03)" },
+          sx: { background: "rgba(56, 54, 54, 0.6)" },
         }}
       >
         <Box sx={style}>
