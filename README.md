@@ -27,8 +27,7 @@ react-google-/api
 
 From the home page, users will be welcomed to the app, and given details on how to start their restaurant search.
 
-```
-User must be able to:
+Following this, user must be able to:
 
 - Navigate to their desired search option (by keyword, closest MRT, or pre-set cuisine)
 - If searching by keyword: 
@@ -39,8 +38,6 @@ User must be able to:
 -- Browse through restaurant results easily
 -- View more restaurant details (e.g. description, address, contact info, cuisines, map location) by clicking on 'learn more' button
 - User should also be able to navigate back to the home page at any time through the navigation bar
-
-```
 
 ---
 
