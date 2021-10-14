@@ -25,16 +25,17 @@ function App() {
               Search up restaurants and other food establishments by one of the
               following:
             </h3>
-            <Stack direction="row" spacing={2} justifyContent="center">
-              <Button variant="contained">
+            <Stack direction="row" spacing={4} justifyContent="center" sx={{mt: 4}}>
+              <Button variant="contained" size="large">
                 <Link to="/keyword">Search by Keyword</Link>
               </Button>
-              <Button variant="contained">
+              <Button variant="contained" size="large">
                 <Link to="/closestMRT">Search by nearest MRT</Link>
               </Button>
             </Stack>
+            <br />
             <h3>Or browse from restaurants in the following categories:</h3>
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{mt: 4}}>
               <Grid container spacing={4}>
                 <CuisineCards />
               </Grid>
