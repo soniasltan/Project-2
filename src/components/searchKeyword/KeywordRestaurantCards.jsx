@@ -9,6 +9,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import CardMap from "../CardMap";
 // import { useParams } from "react-router-dom"
 
 const KeywordRestaurantCards = (props) => {
@@ -96,6 +97,7 @@ const KeywordRestaurantCards = (props) => {
             <p>{restoName?.contact?.primaryContactNo !== "" ? "Contact: "+restoName?.contact?.primaryContactNo : ""}</p>
             <p>{restoName?.rating !== "" ? "Rating: "+restoName?.rating : ""}</p>
           </Typography>
+          <CardMap location={restoName?.location} style={{position: "absolute", left: "50%"}}/>
         </Box>
       </Modal>
     </>

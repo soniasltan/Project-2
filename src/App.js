@@ -7,9 +7,10 @@ import { Stack } from "@mui/material";
 import Keyword from "./components/searchKeyword/Keyword";
 import Button from "@mui/material/Button";
 import ClosestMRT from "./components/searchClosestMRT/ClosestMRT";
-import KeywordRestaurantDetails from "./components/searchKeyword/KeywordRestaurantDetails";
+
 
 function App() {
+  
   return (
     <>
       <CssBaseline />
@@ -34,7 +35,6 @@ function App() {
           <Route exact path="/keyword">
             <Keyword />
           </Route>
-        
           <Route path="/closestMRT">
             <ClosestMRT />
           </Route>

@@ -5,7 +5,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { TextField, Stack } from "@mui/material";
 import KeywordRestaurantCards from "./KeywordRestaurantCards";
-import KeywordRestaurantDetails from "./KeywordRestaurantDetails";
 
 
 const Keyword = () => {
@@ -78,9 +77,6 @@ const Keyword = () => {
           </Grid>
         </Container>
       </div>
-      <Route exact path="/keyword/:restoName">
-          <KeywordRestaurantDetails />
-        </Route>
     </>
   );
 };
