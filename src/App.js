@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import ClosestMRT from "./components/ClosestMRT";
 import CuisineCards from "./components/CuisineCards";
+import Cuisines from "./components/Cuisines";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
                 <Link to="/closestMRT">Search by nearest MRT</Link>
               </Button>
             </Stack>
-            <h3>Or choose from the following options:</h3>
+            <h3>Or browse from restaurants in the following categories:</h3>
             <Container maxWidth="lg">
               <Grid container spacing={4}>
                 <CuisineCards />
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/closestMRT">
             <ClosestMRT />
+          </Route>
+          <Route path="/cuisines/:cuisine">
+            <Cuisines/>
           </Route>
         </Switch>
       </div>

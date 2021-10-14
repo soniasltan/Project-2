@@ -86,7 +86,7 @@ const RestaurantCards = (props) => {
             {restoName?.name}
           </Typography>
           <Typography id="modal-modal-title" sx={{ marginBottom: 5}}>
-          <p>{restoName?.description !== "" ? restoName?.description : ""}</p>
+          <p>{restoName?.description === "" | "Description" ? restoName?.description : ""}</p>
           </Typography>
           <Typography id="modal-modal-address" sx={{ my: 0.2}}>
             <p>Address: {restoName?.address?.block !== "" ? restoName?.address?.block+ " " : ""}{restoName?.address?.streetName}{restoName?.address?.floorNumber !== "" ? ", "+restoName?.address?.floorNumber+"-"+restoName?.address?.unitNumber : ""}{restoName?.address?.buildingName !== "" ? ", "+restoName?.address?.buildingName : ""}{restoName?.address?.postalCode !== "" ? ", Singapore "+restoName?.address?.postalCode : ""}</p>
