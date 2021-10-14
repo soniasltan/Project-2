@@ -16,8 +16,11 @@ react-google-/api
 ### Wireframes
 
 ![Home Page Wireframe] (https://user-images.githubusercontent.com/89738375/137369380-72c55cbe-24dd-4b1a-998f-c93064bff5cf.png)
+
 ![Search by Keyword Wireframe] (https://user-images.githubusercontent.com/89738375/137369700-c55d2507-77eb-4722-975e-f9eca1c9116f.png)
+
 ![Search by MRT Wireframe] (https://user-images.githubusercontent.com/89738375/137369689-70e955c2-7c16-4915-b7b6-3e2e5d8e0941.png)
+
 ![Modal Wireframe] (https://user-images.githubusercontent.com/89738375/137369682-2f03793e-11a3-4ba3-b452-ec1ef3c59d2e.png)
 
 ### User Stories
