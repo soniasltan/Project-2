@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useRouteMatch, Switch, Route, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
@@ -9,10 +8,9 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import CardMap from "../CardMap";
-// import { useParams } from "react-router-dom"
+import CardMap from "./CardMap";
 
-const KeywordRestaurantCards = (props) => {
+const RestaurantCards = (props) => {
   const [open, setOpen] = useState({ state: false, id: "" });
   const handleOpen = (event) => {
     setOpen({state: true, id: event.target.value});
@@ -104,4 +102,4 @@ const KeywordRestaurantCards = (props) => {
   );
 };
 
-export default KeywordRestaurantCards;
+export default RestaurantCards;

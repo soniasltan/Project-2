@@ -5,13 +5,16 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import mrtStations from "../../data/mrtStations";
-// import SearchMRT from "./SearchMRT"
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+import mrtStations from "../data/mrtStations";
+import RestaurantCards from "./RestaurantCards";
 
 const ClosestMRT = (props) => {
   const [line, setLine] = useState("");
   const [station, setStation] = useState("");
   const [input, setInput] = useState([]);
+  const [status, setStatus] = useState("idle")
 
   const url =
     "https://tih-api.stb.gov.sg/content/v1/food-beverages/search?keyword=" +
@@ -39,9 +42,11 @@ const ClosestMRT = (props) => {
   };
 
   const handleSubmit = async () => {
+    setStatus("pending")
     console.log("handling submit")
     const res = await fetch(url);
     let data = await res.json();
+    setStatus("resolved");
     // let token = data?.nextToken
     console.log("unfiltered", data);
     const restoData = data?.data.filter(
@@ -170,8 +175,20 @@ const ClosestMRT = (props) => {
           </Button>
         </FormControl>
       </Box>
-      <br />
-      <h2>{input?.[0]?.name}</h2>
+      <div className="results">
+        <p>
+          {status === "pending"
+            ? "Fetching food..."
+            : status === "resolved"
+            ? "Search found the following eateries"
+            : ""}
+        </p>
+        <Container maxWidth="lg">
+          <Grid container spacing={4}>
+          <RestaurantCards restos={input} />
+          </Grid>
+        </Container>
+        </div>
     </>
   );
 };

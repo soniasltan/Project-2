@@ -4,13 +4,14 @@ import Navbar from "./components/Navbar";
 import { Route, Switch, Link } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Stack } from "@mui/material";
-import Keyword from "./components/searchKeyword/Keyword";
+import Keyword from "./components/Keyword";
 import Button from "@mui/material/Button";
-import ClosestMRT from "./components/searchClosestMRT/ClosestMRT";
-
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import ClosestMRT from "./components/ClosestMRT";
+import CuisineCards from "./components/CuisineCards";
 
 function App() {
-  
   return (
     <>
       <CssBaseline />
@@ -21,7 +22,7 @@ function App() {
             <h1>Welcome to SG Food Finder</h1>
             <h3>
               Search up restaurants and other food establishments by one of the
-              following:{" "}
+              following:
             </h3>
             <Stack direction="row" spacing={2} justifyContent="center">
               <Button variant="contained">
@@ -31,6 +32,12 @@ function App() {
                 <Link to="/closestMRT">Search by nearest MRT</Link>
               </Button>
             </Stack>
+            <h3>Or choose from the following options:</h3>
+            <Container maxWidth="lg">
+              <Grid container spacing={4}>
+                <CuisineCards />
+              </Grid>
+            </Container>
           </Route>
           <Route exact path="/keyword">
             <Keyword />
@@ -38,7 +45,6 @@ function App() {
           <Route path="/closestMRT">
             <ClosestMRT />
           </Route>
-
         </Switch>
       </div>
     </>
