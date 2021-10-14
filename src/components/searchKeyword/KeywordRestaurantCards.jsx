@@ -14,7 +14,6 @@ import Typography from "@mui/material/Typography";
 const KeywordRestaurantCards = (props) => {
   const [open, setOpen] = useState({ state: false, id: "" });
   const handleOpen = (event) => {
-    console.log("data" + event.target.value);
     setOpen({state: true, id: event.target.value});
   };
   const handleClose = () => setOpen({ state: false, id: {} });
@@ -26,7 +25,8 @@ const KeywordRestaurantCards = (props) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: "50%",
+    maxWidth: 425,
     bgcolor: "background.paper",
     border: "1px solid lightgrey",
     borderRadius: "5px",
@@ -86,8 +86,15 @@ const KeywordRestaurantCards = (props) => {
           <Typography id="modal-modal-title" variant="h" component="h2">
             {restoName?.name}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Address: {restoName?.address?.streetName}
+          <Typography id="modal-modal-title" sx={{ marginBottom: 5}}>
+          <p>{restoName?.description !== "" ? restoName?.description : ""}</p>
+          </Typography>
+          <Typography id="modal-modal-address" sx={{ my: 0.2}}>
+            <p>Address: {restoName?.address?.block !== "" ? restoName?.address?.block+ " " : ""}{restoName?.address?.streetName}{restoName?.address?.floorNumber !== "" ? ", "+restoName?.address?.floorNumber+"-"+restoName?.address?.unitNumber : ""}{restoName?.address?.buildingName !== "" ? ", "+restoName?.address?.buildingName : ""}{restoName?.address?.postalCode !== "" ? ", Singapore "+restoName?.address?.postalCode : ""}</p>
+            <p>{restoName?.nearestMrtStation !== "" ? "Closest MRT Station: "+restoName?.nearestMrtStation : ""}</p>
+            <p>{restoName?.cuisine !== "" ? "Cuisine: "+restoName?.cuisine : ""}</p>
+            <p>{restoName?.contact?.primaryContactNo !== "" ? "Contact: "+restoName?.contact?.primaryContactNo : ""}</p>
+            <p>{restoName?.rating !== "" ? "Rating: "+restoName?.rating : ""}</p>
           </Typography>
         </Box>
       </Modal>
