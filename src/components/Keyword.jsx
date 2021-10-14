@@ -5,9 +5,7 @@ import Grid from "@mui/material/Grid";
 import { TextField, Stack } from "@mui/material";
 import RestaurantCards from "./RestaurantCards";
 
-
 const Keyword = () => {
-  
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("idle");
   const [restos, setRestos] = useState([]);
@@ -37,8 +35,8 @@ const Keyword = () => {
     <>
       <div className="top">
         <h3>Discover new places to dine by entering a keyword below</h3>
-</div>
-<Stack
+      </div>
+      <Stack
         direction="row"
         spacing={2}
         alignItems="center"
@@ -58,6 +56,7 @@ const Keyword = () => {
           variant="contained"
           size="small"
           onClick={handleSubmit}
+          color="secondary"
         >
           Search
         </Button>
@@ -75,6 +74,8 @@ const Keyword = () => {
             <RestaurantCards restos={restos} />
           </Grid>
         </Container>
+        {/* <br />
+        <div className="moreResults">{status === "resolved" ? "Pull more results" : ""}</div> */}
       </div>
     </>
   );

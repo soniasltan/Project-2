@@ -13,11 +13,11 @@ import CardMap from "./CardMap";
 const RestaurantCards = (props) => {
   const [open, setOpen] = useState({ state: false, id: "" });
   const handleOpen = (event) => {
-    setOpen({state: true, id: event.target.value});
+    setOpen({ state: true, id: event.target.value });
   };
   const handleClose = () => setOpen({ state: false, id: {} });
 
-  const restoName = props.restos.find((x) => x.uuid === open.id)
+  const restoName = props.restos.find((x) => x.uuid === open.id);
 
   const style = {
     position: "absolute",
@@ -54,14 +54,9 @@ const RestaurantCards = (props) => {
             <Typography gutterBottom variant="h5" component="div">
               {data.name}
             </Typography>
-            {/* <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography> */}
           </CardContent>
           <CardActions>
-            {/* <Button size="small">Share</Button> */}
-            <Button size="small" value={data.uuid} onClick={handleOpen}>
+            <Button size="small" value={data.uuid} onClick={handleOpen} color="secondary">
               Learn More
             </Button>
           </CardActions>
@@ -85,17 +80,56 @@ const RestaurantCards = (props) => {
           <Typography id="modal-modal-title" variant="h" component="h2">
             {restoName?.name}
           </Typography>
-          <Typography id="modal-modal-title" sx={{ marginBottom: 5}}>
-          <p>{restoName?.description === "" | "Description" ? restoName?.description : ""}</p>
+          <Typography id="modal-modal-title" sx={{ marginBottom: 5 }}>
+            <p>
+              {(restoName?.description === "") | "Description"
+                ? restoName?.description
+                : ""}
+            </p>
           </Typography>
-          <Typography id="modal-modal-address" sx={{ my: 0.2}}>
-            <p>Address: {restoName?.address?.block !== "" ? restoName?.address?.block+ " " : ""}{restoName?.address?.streetName}{restoName?.address?.floorNumber !== "" ? ", "+restoName?.address?.floorNumber+"-"+restoName?.address?.unitNumber : ""}{restoName?.address?.buildingName !== "" ? ", "+restoName?.address?.buildingName : ""}{restoName?.address?.postalCode !== "" ? ", Singapore "+restoName?.address?.postalCode : ""}</p>
-            <p>{restoName?.nearestMrtStation !== "" ? "Closest MRT Station: "+restoName?.nearestMrtStation : ""}</p>
-            <p>{restoName?.cuisine !== "" ? "Cuisine: "+restoName?.cuisine : ""}</p>
-            <p>{restoName?.contact?.primaryContactNo !== "" ? "Contact: "+restoName?.contact?.primaryContactNo : ""}</p>
-            <p>{restoName?.rating !== "" ? "Rating: "+restoName?.rating : ""}</p>
+          <Typography id="modal-modal-address" sx={{ my: 0.2 }}>
+            <p>
+              Address:{" "}
+              {restoName?.address?.block !== ""
+                ? restoName?.address?.block + " "
+                : ""}
+              {restoName?.address?.streetName}
+              {restoName?.address?.floorNumber !== ""
+                ? ", " +
+                  restoName?.address?.floorNumber +
+                  "-" +
+                  restoName?.address?.unitNumber
+                : ""}
+              {restoName?.address?.buildingName !== ""
+                ? ", " + restoName?.address?.buildingName
+                : ""}
+              {restoName?.address?.postalCode !== ""
+                ? ", Singapore " + restoName?.address?.postalCode
+                : ""}
+            </p>
+            <p>
+              {restoName?.nearestMrtStation !== ""
+                ? "Closest MRT Station: " + restoName?.nearestMrtStation
+                : ""}
+            </p>
+            <p>
+              {restoName?.cuisine !== ""
+                ? "Cuisine: " + restoName?.cuisine
+                : ""}
+            </p>
+            <p>
+              {restoName?.contact?.primaryContactNo !== ""
+                ? "Contact: " + restoName?.contact?.primaryContactNo
+                : ""}
+            </p>
+            <p>
+              {restoName?.rating !== "" ? "Rating: " + restoName?.rating : ""}
+            </p>
           </Typography>
-          <CardMap location={restoName?.location} style={{position: "absolute", left: "50%"}}/>
+          <CardMap
+            location={restoName?.location}
+            style={{ position: "absolute", left: "50%" }}
+          />
         </Box>
       </Modal>
     </>

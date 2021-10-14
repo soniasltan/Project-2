@@ -11,10 +11,23 @@ import Grid from "@mui/material/Grid";
 import ClosestMRT from "./components/ClosestMRT";
 import CuisineCards from "./components/CuisineCards";
 import Cuisines from "./components/Cuisines";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function App() {
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#780116",
+      },
+      secondary: {
+        main: "#3d5a80",
+      },
+    }
+  })
   return (
     <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
         <Navbar />
@@ -26,10 +39,10 @@ function App() {
               following:
             </h3>
             <Stack direction="row" spacing={4} justifyContent="center" sx={{mt: 4}}>
-              <Button variant="contained" size="large">
+              <Button variant="contained" size="large" color="secondary">
                 <Link to="/keyword">Search by Keyword</Link>
               </Button>
-              <Button variant="contained" size="large">
+              <Button variant="contained" size="large" color="secondary">
                 <Link to="/closestMRT">Search by nearest MRT</Link>
               </Button>
             </Stack>
@@ -52,6 +65,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      </ThemeProvider>
     </>
   );
 }

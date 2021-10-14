@@ -14,13 +14,13 @@ const ClosestMRT = (props) => {
   const [line, setLine] = useState("");
   const [station, setStation] = useState("");
   const [input, setInput] = useState([]);
-  const [status, setStatus] = useState("idle")
+  const [status, setStatus] = useState("idle");
 
   const url =
     "https://tih-api.stb.gov.sg/content/v1/food-beverages/search?keyword=" +
-      station +
-      "&language=en&apikey=" +
-      process.env.REACT_APP_TIH_API_KEY;
+    station +
+    "&language=en&apikey=" +
+    process.env.REACT_APP_TIH_API_KEY;
 
   const selectedLineStations = mrtStations.data.filter(
     (selected) => selected.lineName === line
@@ -42,8 +42,8 @@ const ClosestMRT = (props) => {
   };
 
   const handleSubmit = async () => {
-    setStatus("pending")
-    console.log("handling submit")
+    setStatus("pending");
+    console.log("handling submit");
     const res = await fetch(url);
     let data = await res.json();
     setStatus("resolved");
@@ -55,8 +55,8 @@ const ClosestMRT = (props) => {
         search.nearestMrtStation === station + " Station" ||
         search.nearestMrtStation === station + " MRT Station"
     );
-    setInput(restoData)
-    console.log("filtered", restoData)
+    setInput(restoData);
+    console.log("filtered", restoData);
     // console.log("new input", input)
     // for (let i=0; i<5; i++) {
     // if (input.length < 3) {
@@ -82,8 +82,8 @@ const ClosestMRT = (props) => {
     //   console.log("second call input", input)
     //   return (
     //     setInput(newRestoData, ...restoData)
-    //   ) 
-    // } 
+    //   )
+    // }
     // }
   };
 
@@ -105,7 +105,10 @@ const ClosestMRT = (props) => {
 
   return (
     <>
-      <h3>Find convenient dining spots close to your desired location by selecting the nearest MRT station below</h3>
+      <h3>
+        Find convenient dining spots close to your desired location by selecting
+        the nearest MRT station below
+      </h3>
 
       <Box sx={{ minWidth: 120 }}>
         <FormControl sx={{ width: 300 }}>
@@ -169,7 +172,8 @@ const ClosestMRT = (props) => {
             variant="contained"
             onClick={handleSubmit}
             disableElevation
-            sx={{ margin: "15px 0 0 0", backgroundColor: "lightgrey" }}
+            sx={{ margin: "15px 0 0 0" }}
+            color= "secondary"
           >
             Search
           </Button>
@@ -185,10 +189,10 @@ const ClosestMRT = (props) => {
         </p>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-          <RestaurantCards restos={input} />
+            <RestaurantCards restos={input} />
           </Grid>
         </Container>
-        </div>
+      </div>
     </>
   );
 };
