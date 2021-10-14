@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# SG Food Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tired of wracking your brains over where to eat? Take the stress away by finding your next restaurant to visit on SG Food Finder.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project allows users to find restaurants/food establishments in Singapore by searching through keywords, selecting the closest MRT station to search by, or selecting from pre-set options of popular cuisines on the home page. After inputting a search/making the relevant selection, users can also see more detailed restaurant information by clicking on the restaurant card on the results page. 
 
-### `npm start`
+### Technical Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+JavaScript (React)
+HTML/CSS
+Material UI
+react-google-/api
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Wireframes
 
-### `npm test`
+![Home Page Wireframe] (https://user-images.githubusercontent.com/89738375/137369380-72c55cbe-24dd-4b1a-998f-c93064bff5cf.png)
+![Search by Keyword Wireframe] (https://user-images.githubusercontent.com/89738375/137369700-c55d2507-77eb-4722-975e-f9eca1c9116f.png)
+![Search by MRT Wireframe] (https://user-images.githubusercontent.com/89738375/137369689-70e955c2-7c16-4915-b7b6-3e2e5d8e0941.png)
+![Modal Wireframe] (https://user-images.githubusercontent.com/89738375/137369682-2f03793e-11a3-4ba3-b452-ec1ef3c59d2e.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User Stories
 
-### `npm run build`
+From the home page, users will be welcomed to the app, and given details on how to start their restaurant search.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+User must be able to:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Navigate to their desired search option (by keyword, closest MRT, or pre-set cuisine)
+- If searching by keyword: 
+-- User must be able to input their desired keyword and generate corresponding results on button submit
+- If selecting closest MRT:
+-- User must be able to select their desired MRT line, and the corresponding MRT station for search
+- Once results are loaded through any of the search options, user should be able to:
+-- Browse through restaurant results easily
+-- View more restaurant details (e.g. description, address, contact info, cuisines, map location) by clicking on 'learn more' button
+- User should also be able to navigate back to the home page at any time through the navigation bar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Planning and Development Process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Started project planning by looking for interesting APIs with enough data to manipulate on a web app. Once the base TIH Food and Beverages API was selected, decided on interesting ways to show the data to create the overall project plans and wireframes. Broke down the development process to systematically tackle different features, while also trying to incorporate MUI styling along the way - switching between working on functionality and styling provided good variety, especially if stuck on problems with one. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Problem-Solving Strategy
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Mainly looked through course materials and labs as the first point of reference while stuck on problems, and searched on Google for relevant documentation to try and troubleshoot the issue, or other similar examples faced by other people on StackOverflow for solutions that could be adapted to my issue. Failing that, looked instead for alternative solutions that could achieve the same/similar results. 
 
-## Learn More
+### Unsolved problems
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Search by closest MRT is quite limited due to inconsistencies in the data available from the API (not all sources provide info to fill the nearestMRT value), so finding a way to continuously pull from the API until a minimum number of search results are met would be good - would however also need to account for the possibility that MRT stations in more remote areas may not ever generate results. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## APIs Used
 
-### Code Splitting
+Singapore Tourism Board's Tourism Information Hub (TIH) Food and Beverages API - searchFoodBeveragesByKeyword (https://tih-dev.stb.gov.sg/content-api/apis/get/v1/food-beverages/search)
+- Provided Singapore restaurant/food establishment data collected from various sources (e.g. STB, hungrygowhere)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Google Maps API (https://developers.google.com/maps/documentation/javascript/overview)
+- Allowed for creation of customizable maps set with lat/long data - this was used with react-google-maps/api library to work with the data
+---
 
-### Analyzing the Bundle Size
+## Acknowledgments
+- The GA staff (Simon, Mike, and Justin) for their support and guidance
+- Google and other sites like StackOverflow, W3Schools etc for examples and crowdsourced info on similar problems
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+ ## References
+ - https://mui.com/
+ - https://reactrouter.com/
+ - https://reactjs.org/
+ - https://www.npmjs.com/package/@react-google-maps/api
+ - https://react-google-maps-api-docs.netlify.app/
+ - https://stackoverflow.com
+ - https://tih-dev.stb.gov.sg/content-api/apis
+ - https://developers.google.com/maps/documentation/javascript/overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
