@@ -8,10 +8,10 @@ This project allows users to find restaurants/food establishments in Singapore b
 
 ### Technical Used
 
-JavaScript (React)
-HTML/CSS
-Material UI
-react-google-/api
+- JavaScript (React)
+- HTML/CSS
+- Material UI
+- react-google-/api
 
 ### Wireframes
 
