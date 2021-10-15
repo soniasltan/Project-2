@@ -12,6 +12,7 @@ This project allows users to find restaurants/food establishments in Singapore b
 - HTML/CSS
 - Material UI
 - react-google-/api
+- react-router
 
 ### Wireframes
 
@@ -65,6 +66,7 @@ Google Maps API (https://developers.google.com/maps/documentation/javascript/ove
 ## Acknowledgments
 - The GA staff (Simon, Mike, and Justin) for their support and guidance
 - Google and other sites like StackOverflow, W3Schools etc for examples and crowdsourced info on similar problems
+- Data.gov.sg for the MRT station names
 
 ---
 
@@ -77,4 +79,5 @@ Google Maps API (https://developers.google.com/maps/documentation/javascript/ove
  - https://stackoverflow.com
  - https://tih-dev.stb.gov.sg/content-api/apis
  - https://developers.google.com/maps/documentation/javascript/overview
+ - https://data.gov.sg/dataset/train-station-chinese-names
 
